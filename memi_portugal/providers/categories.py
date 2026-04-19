@@ -4,13 +4,13 @@ from memi_engine import CategoryProvider, register
 from memi_engine import images
 
 from memi_portugal.categories.distritos import DISTRITOS
-from memi_portugal.categories.monumentos import MONUMENTOS, LOCALIZACOES
+from memi_portugal.categories.monumentos import MONUMENTOS, LOCALIZACOES, WIKIPEDIA as MONUMENT_WIKI
 from memi_portugal.categories.comida import COMIDA
 from memi_portugal.categories.pessoas import PESSOAS
 
 
 class DistritosProvider(CategoryProvider):
-    key = "portugal:distritos"
+    key = "distritos"
     items = DISTRITOS
 
     def get_image(self, item):
@@ -21,15 +21,20 @@ class DistritosProvider(CategoryProvider):
 
 
 class MonumentosProvider(CategoryProvider):
-    key = "portugal:monumentos"
+    key = "monumentos"
     items = MONUMENTOS
+    override_name = True
+
+    def get_image(self, item):
+        wiki = MONUMENT_WIKI.get(item, item)
+        return images.get_wikipedia_image(wiki)
 
     def get_tag(self, item):
         return LOCALIZACOES.get(item)
 
 
 class ComidaProvider(CategoryProvider):
-    key = "portugal:comida"
+    key = "comida"
     items = COMIDA
 
     def get_image(self, item):
@@ -40,7 +45,7 @@ class ComidaProvider(CategoryProvider):
 
 
 class PessoasProvider(CategoryProvider):
-    key = "portugal:pessoas"
+    key = "pessoas"
     items = PESSOAS
 
     def get_tag(self, item):

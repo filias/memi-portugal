@@ -28,6 +28,35 @@ MONUMENTOS = [
     "Templo Romano de Évora",
 ]
 
+# Map Portuguese names to English Wikipedia article titles
+WIKIPEDIA = {
+    "Torre de Belém": "Belém Tower",
+    "Mosteiro dos Jerónimos": "Jerónimos Monastery",
+    "Palácio da Pena": "Pena Palace",
+    "Castelo de São Jorge": "São Jorge Castle",
+    "Ponte 25 de Abril": "25 de Abril Bridge",
+    "Sé de Lisboa": "Lisbon Cathedral",
+    "Universidade de Coimbra": "University of Coimbra",
+    "Convento de Cristo": "Convent of Christ (Tomar)",
+    "Mosteiro de Alcobaça": "Alcobaça Monastery",
+    "Mosteiro da Batalha": "Batalha Monastery",
+    "Palácio da Bolsa": "Palácio da Bolsa",
+    "Sé do Porto": "Porto Cathedral",
+    "Ponte Dom Luís I": "Dom Luís I Bridge",
+    "Santuário do Bom Jesus do Monte": "Bom Jesus do Monte",
+    "Castelo de Guimarães": "Guimarães Castle",
+    "Torre dos Clérigos": "Clérigos Tower",
+    "Aqueduto das Águas Livres": "Águas Livres Aqueduct",
+    "Palácio Nacional de Mafra": "Palace of Mafra",
+    "Palácio Nacional de Sintra": "Palace of Sintra",
+    "Castelo de Almourol": "Almourol Castle",
+    "Castelo de Óbidos": "Castle of Óbidos",
+    "Fortaleza de Sagres": "Fortress of Sagres",
+    "Sé de Braga": "Braga Cathedral",
+    "Ruínas de Conímbriga": "Conímbriga",
+    "Templo Romano de Évora": "Temple of Diana (Évora)",
+}
+
 LOCALIZACOES = {
     "Torre de Belém": "Lisboa",
     "Mosteiro dos Jerónimos": "Lisboa",
