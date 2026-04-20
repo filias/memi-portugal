@@ -25,6 +25,7 @@ from memi_portugal.categories.republica import (
 class DistrictsProvider(CategoryProvider):
     key = "distritos"
     items = DISTRICTS
+    override_name = True
 
     def get_image(self, item):
         result = images.get_wikipedia_image(f"{item} District")
