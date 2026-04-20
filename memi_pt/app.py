@@ -3,7 +3,7 @@
 from memi_engine import MemiConfig, create_app
 
 # Import providers to register them
-import memi_portugal.providers  # noqa: F401
+import memi_pt.providers  # noqa: F401
 
 config = MemiConfig(
     title="memi portugal",

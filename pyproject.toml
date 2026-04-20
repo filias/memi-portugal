@@ -17,4 +17,4 @@ build-backend = "hatchling.build"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["memi_portugal"]
+packages = ["memi_pt"]

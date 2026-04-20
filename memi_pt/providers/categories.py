@@ -3,24 +3,24 @@
 from memi_engine import CategoryProvider, register
 from memi_engine import images
 
-from memi_portugal.categories.distritos import DISTRICTS, MAP_FILES as DISTRICT_MAPS
-from memi_portugal.categories.monumentos import (
+from memi_pt.categories.distritos import DISTRICTS, MAP_FILES as DISTRICT_MAPS
+from memi_pt.categories.monumentos import (
     MONUMENTS,
     LOCATIONS,
     WIKIPEDIA as MONUMENT_WIKI,
 )
-from memi_portugal.categories.comida import FOOD
-from memi_portugal.categories.monarquia import (
+from memi_pt.categories.comida import FOOD
+from memi_pt.categories.monarquia import (
     ALL as MONARCHY_ALL,
     WIKIPEDIA as MONARCHY_WIKI,
     TAGS as MONARCHY_TAGS,
 )
-from memi_portugal.categories.republica import (
+from memi_pt.categories.republica import (
     ALL as REPUBLIC_ALL,
     WIKIPEDIA as REPUBLIC_WIKI,
     TAGS as REPUBLIC_TAGS,
 )
-from memi_portugal.categories.natureza import (
+from memi_pt.categories.natureza import (
     ALL_ANIMALS,
     ALL_PLANTS,
     ANIMAL_WIKIPEDIA,
