@@ -25,6 +25,7 @@ from memi_portugal.categories.natureza import (
     ALL_PLANTS,
     ANIMAL_WIKIPEDIA,
     PLANT_WIKIPEDIA,
+    SCIENTIFIC_NAMES,
 )
 
 
@@ -101,6 +102,9 @@ class AnimalsProvider(CategoryProvider):
         wiki = ANIMAL_WIKIPEDIA.get(item, item)
         return images.get_wikipedia_image(wiki)
 
+    def get_tag(self, item):
+        return SCIENTIFIC_NAMES.get(item)
+
 
 class PlantsProvider(CategoryProvider):
     key = "natureza:plantas"
@@ -110,6 +114,9 @@ class PlantsProvider(CategoryProvider):
     def get_image(self, item):
         wiki = PLANT_WIKIPEDIA.get(item, item)
         return images.get_wikipedia_image(wiki)
+
+    def get_tag(self, item):
+        return SCIENTIFIC_NAMES.get(item)
 
 
 register(DistrictsProvider())
