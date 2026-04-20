@@ -4,9 +4,22 @@ from memi_engine import CategoryProvider, register
 from memi_engine import images
 
 from memi_portugal.categories.distritos import DISTRITOS
-from memi_portugal.categories.monumentos import MONUMENTOS, LOCALIZACOES, WIKIPEDIA as MONUMENT_WIKI
+from memi_portugal.categories.monumentos import (
+    MONUMENTOS,
+    LOCALIZACOES,
+    WIKIPEDIA as MONUMENT_WIKI,
+)
 from memi_portugal.categories.comida import COMIDA
-from memi_portugal.categories.pessoas import PESSOAS
+from memi_portugal.categories.monarquia import (
+    ALL as MONARQUIA_ALL,
+    WIKIPEDIA as MONARQUIA_WIKI,
+    TAGS as MONARQUIA_TAGS,
+)
+from memi_portugal.categories.republica import (
+    ALL as REPUBLICA_ALL,
+    WIKIPEDIA as REPUBLICA_WIKI,
+    TAGS as REPUBLICA_TAGS,
+)
 
 
 class DistritosProvider(CategoryProvider):
@@ -44,15 +57,34 @@ class ComidaProvider(CategoryProvider):
         return result
 
 
-class PessoasProvider(CategoryProvider):
-    key = "pessoas"
-    items = PESSOAS
+class MonarquiaProvider(CategoryProvider):
+    key = "pessoas:monarquia"
+    items = MONARQUIA_ALL
+    override_name = True
+
+    def get_image(self, item):
+        wiki = MONARQUIA_WIKI.get(item, item)
+        return images.get_wikipedia_image(wiki)
 
     def get_tag(self, item):
-        return images.get_wikipedia_description(item) or None
+        return MONARQUIA_TAGS.get(item)
+
+
+class RepublicaProvider(CategoryProvider):
+    key = "pessoas:república"
+    items = REPUBLICA_ALL
+    override_name = True
+
+    def get_image(self, item):
+        wiki = REPUBLICA_WIKI.get(item, item)
+        return images.get_wikipedia_image(wiki)
+
+    def get_tag(self, item):
+        return REPUBLICA_TAGS.get(item)
 
 
 register(DistritosProvider())
 register(MonumentosProvider())
 register(ComidaProvider())
-register(PessoasProvider())
+register(MonarquiaProvider())
+register(RepublicaProvider())
