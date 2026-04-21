@@ -31,7 +31,7 @@ from memi_pt.categories.natureza import (
 
 
 class DistrictsProvider(CategoryProvider):
-    key = "distritos"
+    key = "geografia:distritos"
     items = DISTRICTS
     override_name = True
 
@@ -45,7 +45,7 @@ class DistrictsProvider(CategoryProvider):
 
 
 class MonumentsProvider(CategoryProvider):
-    key = "monumentos"
+    key = "cultura:monumentos"
     items = MONUMENTS
     override_name = True
 
@@ -58,7 +58,7 @@ class MonumentsProvider(CategoryProvider):
 
 
 class FoodProvider(CategoryProvider):
-    key = "comida"
+    key = "cultura:comida"
     items = FOOD
 
     def get_image(self, item):
@@ -121,7 +121,7 @@ class PlantsProvider(CategoryProvider):
 
 
 class MetroProvider(CategoryProvider):
-    key = "metro de lisboa"
+    key = "cultura:metro de lisboa"
     items = STATIONS
     override_name = True
 
