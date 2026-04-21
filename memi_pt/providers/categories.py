@@ -3,6 +3,7 @@
 from memi_engine import CategoryProvider, register
 from memi_engine import images
 
+from memi_pt.categories.cidades import CITIES, WIKIPEDIA as CITY_WIKI, REGIONS as CITY_REGIONS
 from memi_pt.categories.distritos import DISTRICTS
 from memi_pt.categories.metro import STATIONS, COMMONS_FILES as METRO_FILES, LINES as METRO_LINES
 from memi_pt.categories.monumentos import (
@@ -140,8 +141,22 @@ class MetroProvider(CategoryProvider):
         return f"Linha {line}" if line else None
 
 
+class CitiesProvider(CategoryProvider):
+    key = "geografia:cidades"
+    items = CITIES
+    override_name = True
+
+    def get_image(self, item):
+        wiki = CITY_WIKI.get(item, item)
+        return images.get_wikipedia_image(wiki)
+
+    def get_tag(self, item):
+        return CITY_REGIONS.get(item)
+
+
 register(MetroProvider())
 register(DistrictsProvider())
+register(CitiesProvider())
 register(MonumentsProvider())
 register(FoodProvider())
 register(MonarchyProvider())
