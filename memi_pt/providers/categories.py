@@ -3,7 +3,7 @@
 from memi_engine import CategoryProvider, register
 from memi_engine import images
 
-from memi_pt.categories.distritos import DISTRICTS, MAP_FILES as DISTRICT_MAPS
+from memi_pt.categories.distritos import DISTRICTS
 from memi_pt.categories.metro import STATIONS, COMMONS_FILES as METRO_FILES, LINES as METRO_LINES
 from memi_pt.categories.monumentos import (
     MONUMENTS,
@@ -36,12 +36,16 @@ class DistrictsProvider(CategoryProvider):
     override_name = True
 
     def get_image(self, item):
-        map_file = DISTRICT_MAPS.get(item)
-        if map_file:
-            result = images.get_wikipedia_file_image(map_file)
-            if result:
-                return result
-        return images.get_wikipedia_image(item)
+        # Show a photo of the district capital / main city
+        wiki = item
+        if item == "Açores":
+            wiki = "Azores"
+        elif item == "Madeira":
+            wiki = "Madeira"
+        result = images.get_wikipedia_image(wiki)
+        if not result or not result.get("image"):
+            result = images.get_wikipedia_image(f"{item} (city)")
+        return result
 
 
 class MonumentsProvider(CategoryProvider):
