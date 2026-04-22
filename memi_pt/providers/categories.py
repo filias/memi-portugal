@@ -17,6 +17,11 @@ from memi_pt.categories.monarquia import (
     WIKIPEDIA as MONARCHY_WIKI,
     TAGS as MONARCHY_TAGS,
 )
+from memi_pt.categories.pre_reino import (
+    FIGURES as PRE_KINGDOM_ALL,
+    WIKIPEDIA as PRE_KINGDOM_WIKI,
+    TAGS as PRE_KINGDOM_TAGS,
+)
 from memi_pt.categories.republica import (
     ALL as REPUBLIC_ALL,
     WIKIPEDIA as REPUBLIC_WIKI,
@@ -70,7 +75,7 @@ class FoodProvider(CategoryProvider):
 
 
 class MonarchyProvider(CategoryProvider):
-    key = "pessoas:monarquia"
+    key = "pessoas:1143-1910"
     items = MONARCHY_ALL
     override_name = True
 
@@ -83,7 +88,7 @@ class MonarchyProvider(CategoryProvider):
 
 
 class RepublicProvider(CategoryProvider):
-    key = "pessoas:república"
+    key = "pessoas:1910-presente"
     items = REPUBLIC_ALL
     override_name = True
 
@@ -150,6 +155,20 @@ class CitiesProvider(CategoryProvider):
         return CITY_REGIONS.get(item)
 
 
+class PreKingdomProvider(CategoryProvider):
+    key = "pessoas:antes de 1143"
+    items = PRE_KINGDOM_ALL
+    override_name = True
+
+    def get_image(self, item):
+        wiki = PRE_KINGDOM_WIKI.get(item, item)
+        return images.get_wikipedia_image(wiki)
+
+    def get_tag(self, item):
+        return PRE_KINGDOM_TAGS.get(item)
+
+
+register(PreKingdomProvider())
 register(MetroProvider())
 register(DistrictsProvider())
 register(CitiesProvider())
