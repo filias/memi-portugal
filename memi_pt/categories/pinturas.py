@@ -4,9 +4,9 @@ PAINTINGS = [
     # Nuno Gonçalves (c. 1450-1491)
     "Painéis de São Vicente",
     # Vasco Fernandes (Grão Vasco, c. 1475-1542)
-    "São Pedro (Grão Vasco)",
-    "Pentecostes (Grão Vasco)",
-    "Calvário (Grão Vasco)",
+    "São Pedro",
+    "Pentecostes",
+    "Calvário",
     # Josefa de Óbidos (1630-1684)
     "Natureza-Morta com Doces e Flores",
     # Domingos Sequeira (1768-1837)
@@ -33,9 +33,9 @@ PAINTINGS = [
 # Wikimedia Commons filenames — direct painting images
 COMMONS_FILES = {
     "Painéis de São Vicente": "Nuno gonçalves, pannelli di san vincenzo, 1470 ca. 02.jpg",
-    "São Pedro (Grão Vasco)": "São Pedro de Grão Vasco, Museu Grão Vasco b.jpg",
-    "Pentecostes (Grão Vasco)": "Grão Vasco, Pentecostes, da capela da portaria do mosteiro de Santa Cruz de Coimbra, 1534-35, assinada Velasco.jpg",
-    "Calvário (Grão Vasco)": "Calvario GraoVasco.jpg",
+    "São Pedro": "São Pedro de Grão Vasco, Museu Grão Vasco b.jpg",
+    "Pentecostes": "Grão Vasco, Pentecostes, da capela da portaria do mosteiro de Santa Cruz de Coimbra, 1534-35, assinada Velasco.jpg",
+    "Calvário": "Calvario GraoVasco.jpg",
     "Natureza-Morta com Doces e Flores": "JosefaObidos4.jpg",
     "A Descida da Cruz": "Descida da Cruz (1827) - Domingos Sequeira.png",
     "O Grupo do Leão": "Grupo do Leão by Columbano Bordalo Pinheiro.jpg",
@@ -54,9 +54,9 @@ COMMONS_FILES = {
 
 TAGS = {
     "Painéis de São Vicente": "Nuno Gonçalves, c. 1470",
-    "São Pedro (Grão Vasco)": "Grão Vasco, c. 1530",
-    "Pentecostes (Grão Vasco)": "Grão Vasco, 1535",
-    "Calvário (Grão Vasco)": "Grão Vasco, c. 1530",
+    "São Pedro": "Grão Vasco, c. 1530",
+    "Pentecostes": "Grão Vasco, 1535",
+    "Calvário": "Grão Vasco, c. 1530",
     "Natureza-Morta com Doces e Flores": "Josefa de Óbidos, c. 1676",
     "A Descida da Cruz": "Domingos Sequeira, 1827",
     "O Grupo do Leão": "Columbano Bordalo Pinheiro, 1885",
