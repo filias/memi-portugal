@@ -5,7 +5,7 @@ from memi_engine import images
 
 from memi_pt.categories.cidades import CITIES, WIKIPEDIA as CITY_WIKI, REGIONS as CITY_REGIONS
 from memi_pt.categories.clubes import CLUBS, LOGOS as CLUB_LOGOS, TAGS as CLUB_TAGS
-from memi_pt.categories.pinturas import PAINTINGS, WIKIPEDIA as PAINTING_WIKI, TAGS as PAINTING_TAGS
+from memi_pt.categories.pinturas import PAINTINGS, COMMONS_FILES as PAINTING_FILES, TAGS as PAINTING_TAGS
 from memi_pt.categories.rios import RIVERS, WIKIPEDIA as RIVER_WIKI, TAGS as RIVER_TAGS
 from memi_pt.categories.distritos import DISTRICTS, MAP_FILES as DISTRICT_MAPS
 from memi_pt.categories.metro import STATIONS, COMMONS_FILES as METRO_FILES, LINES as METRO_LINES
@@ -209,8 +209,10 @@ class PaintingsProvider(CategoryProvider):
     override_name = True
 
     def get_image(self, item):
-        wiki = PAINTING_WIKI.get(item, item)
-        return images.get_wikipedia_image(wiki)
+        filename = PAINTING_FILES.get(item)
+        if filename:
+            return images.get_commons_file_image(filename)
+        return None
 
     def get_tag(self, item):
         return PAINTING_TAGS.get(item)
