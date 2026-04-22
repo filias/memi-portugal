@@ -33,6 +33,21 @@ config = MemiConfig(
     label_click_to_reveal="clica na imagem para revelar a resposta",
     label_click_for_new="clica novamente para outra",
     label_back="voltar a jogar",
+    done_html="""
+        <svg width="80" height="72" viewBox="0 0 80 72" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <clipPath id="heart-clip">
+                    <path d="M40 68 C40 68 4 44 4 22 C4 10 14 2 24 2 C30 2 36 6 40 12 C44 6 50 2 56 2 C66 2 76 10 76 22 C76 44 40 68 40 68Z"/>
+                </clipPath>
+            </defs>
+            <g clip-path="url(#heart-clip)">
+                <rect x="0" y="0" width="32" height="72" fill="#006600"/>
+                <rect x="32" y="0" width="48" height="72" fill="#FF0000"/>
+            </g>
+            <path d="M40 68 C40 68 4 44 4 22 C4 10 14 2 24 2 C30 2 36 6 40 12 C44 6 50 2 56 2 C66 2 76 10 76 22 C76 44 40 68 40 68Z"
+                  fill="none" stroke="var(--subtle, #888)" stroke-width="1.5"/>
+        </svg>
+    """,
 )
 
 import os
