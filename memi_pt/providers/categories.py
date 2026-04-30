@@ -8,7 +8,6 @@ from memi_pt.categories.clubes import CLUBS, LOGOS as CLUB_LOGOS, TAGS as CLUB_T
 from memi_pt.categories.pinturas import PAINTINGS, COMMONS_FILES as PAINTING_FILES, TAGS as PAINTING_TAGS
 from memi_pt.categories.rios import RIVERS, WIKIPEDIA as RIVER_WIKI, TAGS as RIVER_TAGS
 from memi_pt.categories.distritos import DISTRICTS, MAP_FILES as DISTRICT_MAPS
-from memi_pt.categories.metro import STATIONS, COMMONS_FILES as METRO_FILES, LINES as METRO_LINES
 from memi_pt.categories.monumentos import (
     MONUMENTS,
     LOCATIONS,
@@ -129,22 +128,6 @@ class PlantsProvider(CategoryProvider):
         return SCIENTIFIC_NAMES.get(item)
 
 
-class MetroProvider(CategoryProvider):
-    key = "cultura:metro de lisboa"
-    items = STATIONS
-    override_name = True
-
-    def get_image(self, item):
-        filename = METRO_FILES.get(item)
-        if filename:
-            return images.get_commons_file_image(filename)
-        return None
-
-    def get_tag(self, item):
-        line = METRO_LINES.get(item)
-        return f"Linha {line}" if line else None
-
-
 class CitiesProvider(CategoryProvider):
     key = "geografia:cidades"
     items = CITIES
@@ -219,7 +202,6 @@ class PaintingsProvider(CategoryProvider):
 
 
 register(PreKingdomProvider())
-register(MetroProvider())
 register(DistrictsProvider())
 register(CitiesProvider())
 register(RiversProvider())
