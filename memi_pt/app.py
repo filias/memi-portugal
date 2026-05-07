@@ -8,6 +8,7 @@ import memi_pt.providers  # noqa: F401
 config = MemiConfig(
     title="memi portugal",
     subtitle="pratica a tua memória",
+    favicon_color="#006600",
     themes=["light", "green", "blue", "dark"],
     default_theme="light",
     sponsor_url="https://github.com/sponsors/filias",
