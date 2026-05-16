@@ -11,6 +11,14 @@ config = MemiConfig(
     favicon_color="#006600",
     sponsor_url="https://github.com/sponsors/filias",
     sponsor_text="apoiar",
+    related_sites=[
+        {"name": "memi", "url": "https://memi.click"},
+        {"name": "memi lisboa", "url": "https://lx.memi.click"},
+        {"name": "memi slovensko", "url": "https://sk.memi.click"},
+        {"name": "memi US", "url": "https://us.memi.click"},
+        {"name": "memi Mallorca", "url": "https://ml.memi.click"},
+    ],
+    label_related_sites="outros jogos memi",
     about_html="""
         <p>Memi Portugal é um jogo de memória sobre Portugal.</p>
         <p>Escolhe uma categoria, olha para a imagem e tenta adivinhar
