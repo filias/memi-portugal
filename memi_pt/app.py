@@ -16,7 +16,6 @@ config = MemiConfig(
         {"name": "memi lisboa", "url": "https://lx.memi.click"},
         {"name": "memi slovensko", "url": "https://sk.memi.click"},
         {"name": "memi US", "url": "https://us.memi.click"},
-        {"name": "memi Mallorca", "url": "https://ml.memi.click"},
     ],
     label_related_sites="outros jogos memi",
     about_html="""
